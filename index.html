@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vishnu Pulipaka</title>
+<style>
+  :root {
+    --text: #1a1a1a;
+    --muted: #555;
+    --link: #1a4b8c;
+    --border: #ddd;
+    --bg: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+  h1 {
+    font-size: 1.7rem;
+    font-weight: normal;
+    margin: 0 0 0.2rem;
+  }
+  .title {
+    color: var(--muted);
+    font-size: 1rem;
+    margin: 0 0 1.2rem;
+  }
+  .contact {
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin-bottom: 2.2rem;
+  }
+  .contact a { color: var(--link); text-decoration: none; }
+  .contact a:hover { text-decoration: underline; }
+  .contact span:not(:last-child)::after { content: " \00b7 "; color: var(--border); }
+  h2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.3rem;
+    margin: 2.4rem 0 1rem;
+  }
+  p { margin: 0 0 1rem; }
+  .pub {
+    margin-bottom: 1.3rem;
+  }
+  .pub .pub-title { font-weight: bold; }
+  .pub .pub-meta { color: var(--muted); font-size: 0.92rem; }
+  .pub .pub-links { font-size: 0.9rem; margin-top: 0.15rem; }
+  .pub .pub-links a { color: var(--link); text-decoration: none; margin-right: 0.9rem; }
+  .pub .pub-links a:hover { text-decoration: underline; }
+  ul.edu, ul.plain { padding-left: 1.1rem; margin: 0 0 1rem; }
+  ul.edu li, ul.plain li { margin-bottom: 0.5rem; }
+  .school { font-weight: bold; }
+  .meta { color: var(--muted); font-size: 0.92rem; }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Vishnu Pulipaka</h1>
+  <p class="title">Applied researcher &middot; large language models, multilingual NLP, and ML systems</p>
+  <p class="contact">
+    <span>New Jersey, USA</span>
+    <span><a href="mailto:vishnupulipaka22@gmail.com">vishnupulipaka22@gmail.com</a></span>
+    <span><a href="https://github.com/vishnup22" target="_blank">GitHub</a></span>
+    <span><a href="https://linkedin.com/in/vishnup22" target="_blank">LinkedIn</a></span>
+    <span><a href="https://huggingface.co/pulipakav-1" target="_blank">Hugging Face</a></span>
+    <span><a href="Vishnu_Pulipaka_CV.pdf" target="_blank">CV (PDF)</a></span>
+  </p>
+
+  <h2>About</h2>
+  <p>I work on evaluating and improving large language models: how their behavior changes across releases, how well they transfer to languages with little training data, and how to make the systems around them faster without quietly breaking something. Most of what's below is either under review or still running.</p>
+  <p>I care about results that hold up when you look closely. A few of the findings in my own work turned out to be less clean than I expected going in, and I'd rather report that than round it off into a tidier story.</p>
+
+  <h2>Research Interests</h2>
+  <ul class="plain">
+    <li><strong>Evaluation of large language models.</strong> Measuring how fairness, toxicity, and stereotype metrics change across model versions and providers, and whether those metrics move together or independently.</li>
+    <li><strong>Multilingual and low-resource NLP.</strong> Whether machine translation can substitute for native training data when building small language models for languages like Hindi and Telugu, and where that substitution breaks down.</li>
+    <li><strong>Systems for ML inference.</strong> Where the real bottlenecks are in serving models, particularly for reward scoring in RLHF pipelines, and how much of a claimed speedup actually comes from the thing everyone assumes.</li>
+  </ul>
+
+  <h2>Publications</h2>
+
+  <div class="pub">
+    <div class="pub-title">Evolving Fairness in Large Language Models: A Longitudinal Multi-Benchmark Study Across Model Families and Versions</div>
+    <div class="pub-meta">Vishnu Pulipaka. Submitted, under double-blind review.</div>
+    <p>A release-level fairness drift audit framework applied to 12 model versions from 5 providers across 6 model families and 7 bias benchmarks (about 200K examples). Toxicity declines slightly on average but the confidence interval spans zero; stereotype scores hold steady or worsen in 67% of version transitions, with one statistically significant regression in Gemini-2.5-Pro. All findings replicate after excluding the two most criticized benchmarks.</p>
+    <div class="pub-links"><a href="https://github.com/pulipakav1/AI_bias" target="_blank">Code</a></div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-title">Can Translation Bridge the Data Gap for Low-Resource Languages? A Case Study of Hindi and Telugu</div>
+    <div class="pub-meta">Vishnu Pulipaka. Submitted to the BabyLM Workshop, under review.</div>
+    <p>Translates the 100M-word English BabyLM corpus into Hindi and Telugu with IndicTrans2, then trains and evaluates monolingual and bilingual GPT-Wee and GPT-BERT models. GPT-BERT consistently outperforms GPT-Wee, but models trained on translated data generalize worse than those trained on native CC-100 data when tested out of domain, which matters more than the in-domain perplexity numbers suggest.</p>
+    <div class="pub-links">
+      <a href="https://huggingface.co/datasets/pulipakav-1/translated-babylm-hindi" target="_blank">Hindi Dataset</a>
+      <a href="https://huggingface.co/datasets/pulipakav-1/translated-babylm-telugu" target="_blank">Telugu Dataset</a>
+    </div>
+  </div>
+
+  <div class="pub">
+    <div class="pub-title">How Fast Can Reward Models Score? A Systems Study of C++ and PyTorch Inference Runtimes for RLHF</div>
+    <div class="pub-meta">Vishnu Pulipaka, Anish Katta, Deva Rohit Reddy Peddireddy. arXiv:2607.19712, 2026.</div>
+    <p>Built a native C++ inference engine on ONNX Runtime for RLHF reward-model scoring and benchmarked it against PyTorch eager mode, torch.compile, and FastAPI. On CPU the C++ engine wins outright; on GPU, torch.compile wins. The CPU speedup turned out to come from ONNX Runtime's graph execution, not from C++ itself, and batching strategy mattered more than either.</p>
+    <div class="pub-links">
+      <a href="https://arxiv.org/abs/2607.19712" target="_blank">arXiv</a>
+      <a href="https://github.com/vishnup22/reward-model-benchmarks" target="_blank">Code</a>
+    </div>
+  </div>
+
+  <h2>Ongoing</h2>
+  <ul class="plain">
+    <li><strong>Monolingual vs. multilingual models for Dravidian languages</strong> &mdash; a controlled comparison of monolingual and multilingual GPT-2 and RoBERTa models across Telugu, Tamil, Kannada, and Malayalam against MuRIL, IndicBERT v2, mBERT, and XLM-R. Targeting EACL 2027.</li>
+    <li><strong>Tokenizer efficiency across Telugu, Hindi, and English</strong> &mdash; measuring token inflation and accuracy-efficiency trade-offs for morphologically rich, low-resource languages. Targeting MRL 2026.</li>
+    <li><strong>MultiModalFedCD</strong> &mdash; a federated learning framework combining capsule endoscopy imaging and gene expression data for privacy-preserving Crohn's disease diagnosis. Manuscript in preparation.</li>
+  </ul>
+
+  <h2>Education</h2>
+  <ul class="edu">
+    <li>
+      <div class="school">Master of Science in Data Science, Montclair State University</div>
+      <div class="meta">Montclair, New Jersey &middot; Sep 2024 &ndash; Dec 2025 &middot; GPA 3.87/4.0</div>
+    </li>
+    <li>
+      <div class="school">Bachelor of Technology in Electronics and Communication Engineering, Sreenidhi Institute of Science &amp; Technology</div>
+      <div class="meta">Hyderabad, India &middot; Nov 2020 &ndash; May 2024</div>
+    </li>
+  </ul>
+
+  <footer>
+    Vishnu Pulipaka &middot; Last updated 2026
+  </footer>
+
+</div>
+</body>
+</html>
