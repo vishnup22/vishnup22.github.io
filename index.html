@@ -52,6 +52,7 @@
     margin: 2.4rem 0 1rem;
   }
   p { margin: 0 0 1rem; }
+  .tags { font-weight: bold; }
   .pub {
     margin-bottom: 1.3rem;
   }
@@ -92,13 +93,20 @@
   <p>I care about results that hold up when you look closely. A few of the findings in my own work turned out to be less clean than I expected going in, and I'd rather report that than round it off into a tidier story.</p>
 
   <h2>Research Interests</h2>
-  <ul class="plain">
-    <li><strong>Evaluation of large language models.</strong> Measuring how fairness, toxicity, and stereotype metrics change across model versions and providers, and whether those metrics move together or independently.</li>
-    <li><strong>Multilingual and low-resource NLP.</strong> Whether machine translation can substitute for native training data when building small language models for languages like Hindi and Telugu, and where that substitution breaks down.</li>
-    <li><strong>Systems for ML inference.</strong> Where the real bottlenecks are in serving models, particularly for reward scoring in RLHF pipelines, and how much of a claimed speedup actually comes from the thing everyone assumes.</li>
-  </ul>
+  <p>My work is centered on large language models, with a consistent thread running through evaluation, multilingual generalization, and the systems that serve models efficiently.</p>
+  <p class="tags">LLMs &middot; NLP &middot; Multilingual NLP &middot; Edge AI</p>
 
   <h2>Publications</h2>
+
+  <div class="pub">
+    <div class="pub-title">How Fast Can Reward Models Score? A Systems Study of C++ and PyTorch Inference Runtimes for RLHF</div>
+    <div class="pub-meta">Vishnu Pulipaka, Anish Katta, Deva Rohit Reddy Peddireddy. arXiv:2607.19712, 2026.</div>
+    <p>Built a native C++ inference engine on ONNX Runtime for RLHF reward-model scoring and benchmarked it against PyTorch eager mode, torch.compile, and FastAPI. On CPU the C++ engine wins outright; on GPU, torch.compile wins. The CPU speedup turned out to come from ONNX Runtime's graph execution, not from C++ itself, and batching strategy mattered more than either.</p>
+    <div class="pub-links">
+      <a href="https://arxiv.org/abs/2607.19712" target="_blank">arXiv</a>
+      <a href="https://github.com/vishnup22/reward-model-benchmarks" target="_blank">Code</a>
+    </div>
+  </div>
 
   <div class="pub">
     <div class="pub-title">[Title withheld &mdash; under double-blind review]</div>
@@ -117,19 +125,9 @@
     </div>
   </div>
 
-  <div class="pub">
-    <div class="pub-title">How Fast Can Reward Models Score? A Systems Study of C++ and PyTorch Inference Runtimes for RLHF</div>
-    <div class="pub-meta">Vishnu Pulipaka, Anish Katta, Deva Rohit Reddy Peddireddy. arXiv:2607.19712, 2026.</div>
-    <p>Built a native C++ inference engine on ONNX Runtime for RLHF reward-model scoring and benchmarked it against PyTorch eager mode, torch.compile, and FastAPI. On CPU the C++ engine wins outright; on GPU, torch.compile wins. The CPU speedup turned out to come from ONNX Runtime's graph execution, not from C++ itself, and batching strategy mattered more than either.</p>
-    <div class="pub-links">
-      <a href="https://arxiv.org/abs/2607.19712" target="_blank">arXiv</a>
-      <a href="https://github.com/vishnup22/reward-model-benchmarks" target="_blank">Code</a>
-    </div>
-  </div>
-
   <h2>Ongoing</h2>
   <ul class="plain">
-    <li><strong>Monolingual vs. multilingual models for Dravidian languages</strong> &mdash; a controlled comparison of monolingual and multilingual GPT-2 and RoBERTa models across Telugu, Tamil, Kannada, and Malayalam against MuRIL, IndicBERT v2, mBERT, and XLM-R. Targeting EACL 2027.</li>
+    <li><strong>Monolingual vs. multilingual models for Dravidian languages</strong> &mdash; a controlled comparison of monolingual and multilingual GPT-2 models across Telugu, Tamil, Kannada, and Malayalam against MuRIL, IndicBERT v2, mBERT, and XLM-R. Targeting EACL 2027.</li>
     <li><strong>Tokenizer efficiency across Telugu, Hindi, and English</strong> &mdash; measuring token inflation and accuracy-efficiency trade-offs for morphologically rich, low-resource languages. Targeting MRL 2026.</li>
     <li><strong>MultiModalFedCD</strong> &mdash; a federated learning framework combining capsule endoscopy imaging and gene expression data for privacy-preserving Crohn's disease diagnosis. Manuscript in preparation.</li>
   </ul>
