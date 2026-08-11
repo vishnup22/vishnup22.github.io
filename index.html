@@ -80,7 +80,7 @@
   <h1>Vishnu Pulipaka</h1>
   <p class="title">Applied researcher &middot; large language models, multilingual NLP, and ML systems</p>
   <p class="contact">
-    <span>New Jersey, USA</span>
+    <span>Dayton, Ohio, USA</span>
     <span><a href="mailto:vishnupulipaka22@gmail.com">vishnupulipaka22@gmail.com</a></span>
     <span><a href="https://github.com/vishnup22" target="_blank">GitHub</a></span>
     <span><a href="https://linkedin.com/in/vishnup22" target="_blank">LinkedIn</a></span>
@@ -117,7 +117,7 @@
 
   <div class="pub">
     <div class="pub-title">[Title withheld &mdash; under review]</div>
-    <div class="pub-meta">Vishnu Pulipaka. Submitted to the BabyLM Workshop, under review.</div>
+    <div class="pub-meta">Vishnu Pulipaka. Submitted, under review.</div>
     <p>Translates the 100M-word English BabyLM corpus into Hindi and Telugu with IndicTrans2, then trains and evaluates monolingual and bilingual GPT-Wee and GPT-BERT models. GPT-BERT consistently outperforms GPT-Wee, but models trained on translated data generalize worse than those trained on native CC-100 data when tested out of domain, which matters more than the in-domain perplexity numbers suggest.</p>
     <div class="pub-links">
       <a href="https://huggingface.co/datasets/pulipakav-1/translated-babylm-hindi" target="_blank">Hindi Dataset</a>
@@ -125,10 +125,16 @@
     </div>
   </div>
 
+  <div class="pub">
+    <div class="pub-title">Evaluating Dedicated Monolingual and Joint Multilingual Causal Models for Dravidian Languages</div>
+    <div class="pub-meta">Vishnu Pulipaka. arXiv:2608.07727, 2026.</div>
+    <p>Trained 5 GPT-2-style causal language models from scratch for Telugu, Tamil, Kannada, and Malayalam &mdash; 4 monolingual models, each with its own dedicated 32K-vocabulary tokenizer, plus 1 multilingual model sharing a 64K joint tokenizer &mdash; and compared them against XLM-R, mBERT, and mGPT. The dedicated tokenizers beat every multilingual baseline on fertility and compression, and monolingual pretraining is more efficient by bits-per-byte on every language, even where the multilingual model's raw perplexity looked lower. The multilingual run also diverged partway through training, so that comparison ran on an unequal budget &mdash; a real asymmetry in the results, not a footnote.</p>
+    <div class="pub-links"><a href="https://arxiv.org/abs/2608.07727" target="_blank">arXiv</a></div>
+  </div>
+
   <h2>Ongoing</h2>
   <ul class="plain">
-    <li><strong>Monolingual vs. multilingual models for Dravidian languages</strong> &mdash; a controlled comparison of monolingual and multilingual GPT-2 models across Telugu, Tamil, Kannada, and Malayalam against MuRIL, IndicBERT v2, mBERT, and XLM-R. Targeting EACL 2027.</li>
-    <li><strong>Tokenizer efficiency across Telugu, Hindi, and English</strong> &mdash; measuring token inflation and accuracy-efficiency trade-offs for morphologically rich, low-resource languages. Targeting MRL 2026.</li>
+    <li><strong>Tokenizer efficiency across Telugu, Hindi, and English</strong> &mdash; measuring token inflation and accuracy-efficiency trade-offs for morphologically rich, low-resource languages.</li>
     <li><strong>MultiModalFedCD</strong> &mdash; a federated learning framework combining capsule endoscopy imaging and gene expression data for privacy-preserving Crohn's disease diagnosis. Manuscript in preparation.</li>
   </ul>
 
