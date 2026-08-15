@@ -3,156 +3,252 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Vishnu Pulipaka</title>
+<title>Vishnu Pulipaka | Research</title>
+<meta name="description" content="Vishnu Pulipaka — applied researcher in large language models, multilingual NLP, and ML systems." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --text: #1a1a1a;
-    --muted: #555;
-    --link: #1a4b8c;
-    --border: #ddd;
-    --bg: #ffffff;
+    --bg: #faf8f4;
+    --bg-alt: #f2ede4;
+    --text: #201c16;
+    --muted: #6f6858;
+    --muted-2: #96907e;
+    --accent: #a8471f;
+    --line: #e3dccc;
+    --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
   }
-  * { box-sizing: border-box; }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #17140f;
+      --bg-alt: #1e1911;
+      --text: #f2ede2;
+      --muted: #a89f8b;
+      --muted-2: #786f5c;
+      --accent: #e08a52;
+      --line: #322a1e;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 17px;
-    line-height: 1.65;
+    background: var(--bg); color: var(--text);
+    font-family: var(--sans); font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem 5rem;
+  a { color: inherit; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 1.75rem; }
+  section { padding: 3.6rem 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+
+  h1, h2 { font-family: var(--serif); font-weight: 600; letter-spacing: -0.01em; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
   }
-  h1 {
-    font-size: 1.7rem;
-    font-weight: normal;
-    margin: 0 0 0.2rem;
-  }
-  .title {
-    color: var(--muted);
-    font-size: 1rem;
-    margin: 0 0 1.2rem;
-  }
-  .contact {
-    font-size: 0.92rem;
-    color: var(--muted);
-    margin-bottom: 2.2rem;
-  }
-  .contact a { color: var(--link); text-decoration: none; }
-  .contact a:hover { text-decoration: underline; }
-  .contact span:not(:last-child)::after { content: " \00b7 "; color: var(--border); }
-  h2 {
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 0.3rem;
-    margin: 2.4rem 0 1rem;
-  }
-  p { margin: 0 0 1rem; }
-  .tags { font-weight: bold; }
-  .pub {
-    margin-bottom: 1.3rem;
-  }
-  .pub .pub-title { font-weight: bold; }
-  .pub .pub-meta { color: var(--muted); font-size: 0.92rem; }
-  .pub .pub-links { font-size: 0.9rem; margin-top: 0.15rem; }
-  .pub .pub-links a { color: var(--link); text-decoration: none; margin-right: 0.9rem; }
-  .pub .pub-links a:hover { text-decoration: underline; }
-  ul.edu, ul.plain { padding-left: 1.1rem; margin: 0 0 1rem; }
-  ul.edu li, ul.plain li { margin-bottom: 0.5rem; }
-  .school { font-weight: bold; }
-  .meta { color: var(--muted); font-size: 0.92rem; }
-  footer {
-    margin-top: 3rem;
-    padding-top: 1.2rem;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 0.85rem;
+  nav.scrolled { border-bottom-color: var(--line); }
+  .nav-inner { max-width: 720px; margin: 0 auto; padding: 0 1.75rem; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-mark { font-family: var(--serif); font-weight: 600; font-size: 1.05rem; text-decoration: none; }
+  .nav-links { display: flex; gap: 1.6rem; list-style: none; align-items: center; }
+  .nav-links a { font-size: 0.86rem; color: var(--muted); text-decoration: none; transition: color 0.15s; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-toggle { display: none; background: none; border: none; font-family: var(--sans); font-size: 0.85rem; color: var(--text); cursor: pointer; }
+
+  /* ── HERO ── */
+  #hero { padding: 4rem 0 4rem; }
+  .eyebrow { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+  .hero-name { font-size: clamp(2.2rem, 5.5vw, 3rem); line-height: 1.05; margin-bottom: 0.6rem; }
+  .hero-tagline { font-size: 1.05rem; color: var(--muted); max-width: 560px; margin-bottom: 1.8rem; line-height: 1.65; }
+
+  .hero-links { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; font-size: 0.86rem; }
+  .hero-links a { color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent; }
+  .hero-links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .hero-loc { color: var(--muted-2); }
+
+  /* ── SECTION HEADS ── */
+  .s-head { display: flex; align-items: baseline; gap: 0.7rem; margin-bottom: 1.8rem; }
+  .s-num { font-family: var(--mono); font-size: 0.82rem; color: var(--accent); }
+  .s-title { font-size: 1.4rem; }
+
+  /* ── PROSE ── */
+  .prose p { color: var(--muted); font-size: 0.97rem; line-height: 1.8; margin-bottom: 1.1rem; max-width: 620px; }
+  .tags-line { font-family: var(--mono); font-size: 0.85rem; color: var(--accent); }
+
+  /* ── PUBLICATIONS ── */
+  .pub { padding: 1.5rem 0; border-top: 1px solid var(--line); }
+  .pub:first-child { border-top: none; padding-top: 0; }
+  .pub-title { font-size: 1rem; font-weight: 600; line-height: 1.4; max-width: 620px; margin-bottom: 0.3rem; }
+  .pub-meta { font-size: 0.82rem; color: var(--muted-2); margin-bottom: 0.6rem; }
+  .pub-body { font-size: 0.89rem; color: var(--muted); line-height: 1.7; margin-bottom: 0.7rem; max-width: 640px; }
+  .pub-links { display: flex; gap: 1rem; font-size: 0.82rem; }
+  .pub-links a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+  .pub-links a:hover { border-bottom-color: var(--accent); }
+
+  /* ── PLAIN LIST (Ongoing) ── */
+  .plain-list { list-style: none; max-width: 640px; }
+  .plain-list li { font-size: 0.93rem; color: var(--muted); line-height: 1.7; margin-bottom: 0.8rem; }
+  .plain-list li strong { color: var(--text); font-weight: 600; }
+
+  /* ── EDUCATION ── */
+  .edu-item { padding: 1.1rem 0; border-top: 1px solid var(--line); }
+  .edu-item:first-child { border-top: none; padding-top: 0; }
+  .edu-deg { font-weight: 600; font-size: 0.95rem; }
+  .edu-when { font-family: var(--mono); font-size: 0.78rem; color: var(--muted-2); margin-top: 0.25rem; }
+
+  footer { text-align: center; padding: 2rem 0; font-family: var(--mono); font-size: 0.76rem; color: var(--muted-2); }
+
+  /* ── REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 640px) {
+    .nav-links { display: none; position: absolute; top: 56px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 0; padding: 0.5rem 0; }
+    .nav-links.open { display: flex; }
+    .nav-links li { width: 100%; padding: 0.6rem 1.75rem; }
+    .nav-toggle { display: block; }
+    section { padding: 2.6rem 0; }
   }
 </style>
 </head>
 <body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-mark">Vishnu Pulipaka</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#ongoing">Ongoing</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">Menu</button>
+  </div>
+</nav>
+
 <div class="wrap">
 
-  <h1>Vishnu Pulipaka</h1>
-  <p class="title">Applied researcher &middot; large language models, multilingual NLP, and ML systems</p>
-  <p class="contact">
-    <span>Dayton, Ohio, USA</span>
-    <span><a href="mailto:vishnupulipaka22@gmail.com">vishnupulipaka22@gmail.com</a></span>
-    <span><a href="https://github.com/vishnup22" target="_blank">GitHub</a></span>
-    <span><a href="https://linkedin.com/in/vishnup22" target="_blank">LinkedIn</a></span>
-    <span><a href="https://huggingface.co/pulipakav-1" target="_blank">Hugging Face</a></span>
-  </p>
-
-  <h2>About</h2>
-  <p>I work on evaluating and improving large language models: how their behavior changes across releases, how well they transfer to languages with little training data, and how to make the systems around them faster without quietly breaking something. Most of what's below is either under review or still running.</p>
-  <p>I care about results that hold up when you look closely. A few of the findings in my own work turned out to be less clean than I expected going in, and I'd rather report that than round it off into a tidier story.</p>
-
-  <h2>Research Interests</h2>
-  <p>My work is centered on large language models, with a consistent thread running through evaluation, multilingual generalization, and the systems that serve models efficiently.</p>
-  <p class="tags">LLMs &middot; NLP &middot; Multilingual NLP &middot; Edge AI</p>
-
-  <h2>Publications</h2>
-
-  <div class="pub">
-    <div class="pub-title">How Fast Can Reward Models Score? A Systems Study of C++ and PyTorch Inference Runtimes for RLHF</div>
-    <div class="pub-meta">Vishnu Pulipaka, Anish Katta, Deva Rohit Reddy Peddireddy. arXiv:2607.19712, 2026.</div>
-    <p>Built a native C++ inference engine on ONNX Runtime for RLHF reward-model scoring and benchmarked it against PyTorch eager mode, torch.compile, and FastAPI. On CPU the C++ engine wins outright; on GPU, torch.compile wins. The CPU speedup turned out to come from ONNX Runtime's graph execution, not from C++ itself, and batching strategy mattered more than either.</p>
-    <div class="pub-links">
-      <a href="https://arxiv.org/abs/2607.19712" target="_blank">arXiv</a>
-      <a href="https://github.com/vishnup22/reward-model-benchmarks" target="_blank">Code</a>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="eyebrow">Applied Research</div>
+    <h1 class="hero-name">Vishnu Pulipaka</h1>
+    <p class="hero-tagline">Applied researcher — large language models, multilingual NLP, and ML systems.</p>
+    <div class="hero-links">
+      <a href="mailto:vishnupulipaka22@gmail.com">vishnupulipaka22@gmail.com</a>
+      <a href="https://github.com/vishnup22" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/vishnup22" target="_blank">LinkedIn</a>
+      <a href="https://huggingface.co/pulipakav-1" target="_blank">Hugging Face</a>
+      <span class="hero-loc">Dayton, Ohio, USA</span>
     </div>
-  </div>
+  </section>
 
-  <div class="pub">
-    <div class="pub-title">Evaluating Dedicated Monolingual and Joint Multilingual Causal Models for Dravidian Languages</div>
-    <div class="pub-meta">Vishnu Pulipaka. arXiv:2608.07727, 2026.</div>
-    <p>Trained 5 GPT-2-style causal language models from scratch for Telugu, Tamil, Kannada, and Malayalam &mdash; 4 monolingual models, each with its own dedicated 32K-vocabulary tokenizer, plus 1 multilingual model sharing a 64K joint tokenizer &mdash; and compared them against XLM-R, mBERT, and mGPT. The dedicated tokenizers beat every multilingual baseline on fertility and compression, and monolingual pretraining is more efficient by bits-per-byte on every language, even where the multilingual model's raw perplexity looked lower. The multilingual run also diverged partway through training, so that comparison ran on an unequal budget &mdash; a real asymmetry in the results, not a footnote.</p>
-    <div class="pub-links"><a href="https://arxiv.org/abs/2608.07727" target="_blank">arXiv</a></div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">[Title withheld &mdash; under double-blind review]</div>
-    <div class="pub-meta">Vishnu Pulipaka. Submitted, under double-blind review.</div>
-    <p>A release-level fairness drift audit framework applied to 12 model versions from 5 providers across 6 model families and 7 bias benchmarks (about 200K examples). Toxicity declines slightly on average but the confidence interval spans zero; stereotype scores hold steady or worsen in 67% of version transitions, with one statistically significant regression in Gemini-2.5-Pro. All findings replicate after excluding the two most criticized benchmarks.</p>
-    <div class="pub-links"><a href="https://github.com/vishnup22/fairness-drift-llms" target="_blank">Code</a></div>
-  </div>
-
-  <div class="pub">
-    <div class="pub-title">[Title withheld &mdash; under review]</div>
-    <div class="pub-meta">Vishnu Pulipaka. Submitted, under review.</div>
-    <p>Translates the 100M-word English BabyLM corpus into Hindi and Telugu with IndicTrans2, then trains and evaluates monolingual and bilingual GPT-Wee and GPT-BERT models. GPT-BERT consistently outperforms GPT-Wee, but models trained on translated data generalize worse than those trained on native CC-100 data when tested out of domain, which matters more than the in-domain perplexity numbers suggest.</p>
-    <div class="pub-links">
-      <a href="https://huggingface.co/datasets/pulipakav-1/translated-babylm-hindi" target="_blank">Hindi Dataset</a>
-      <a href="https://huggingface.co/datasets/pulipakav-1/translated-babylm-telugu" target="_blank">Telugu Dataset</a>
+  <!-- ABOUT -->
+  <section id="about" class="reveal">
+    <div class="s-head"><span class="s-num">01</span><h2 class="s-title">About</h2></div>
+    <div class="prose">
+      <p>I work on evaluating and improving large language models: how their behavior changes across releases, how well they transfer to languages with little training data, and how to make the systems around them faster without quietly breaking something. Most of what's below is either under review or still running.</p>
+      <p>I care about results that hold up when you look closely. A few of the findings in my own work turned out to be less clean than I expected going in, and I'd rather report that than round it off into a tidier story.</p>
     </div>
-  </div>
+  </section>
 
-  <h2>Ongoing</h2>
-  <ul class="plain">
-    <li><strong>Tokenizer efficiency across Telugu, Hindi, and English</strong> &mdash; measuring token inflation and accuracy-efficiency trade-offs for morphologically rich, low-resource languages.</li>
-    <li><strong>MultiModalFedCD</strong> &mdash; a federated learning framework combining capsule endoscopy imaging and gene expression data for privacy-preserving Crohn's disease diagnosis. Manuscript in preparation.</li>
-  </ul>
+  <!-- RESEARCH INTERESTS -->
+  <section id="interests" class="reveal">
+    <div class="s-head"><span class="s-num">02</span><h2 class="s-title">Research Interests</h2></div>
+    <div class="prose">
+      <p>My work is centered on large language models, with a consistent thread running through evaluation, multilingual generalization, and the systems that serve models efficiently.</p>
+    </div>
+    <div class="tags-line">LLMs · NLP · Multilingual NLP · Edge AI</div>
+  </section>
 
-  <h2>Education</h2>
-  <ul class="edu">
-    <li>
-      <div class="school">Master of Science in Data Science, Montclair State University</div>
-      <div class="meta">Montclair, New Jersey &middot; Sep 2024 &ndash; Dec 2025 &middot; GPA 3.87/4.0</div>
-    </li>
-    <li>
-      <div class="school">Bachelor of Technology in Electronics and Communication Engineering, Sreenidhi Institute of Science &amp; Technology</div>
-      <div class="meta">Hyderabad, India &middot; Nov 2020 &ndash; May 2024</div>
-    </li>
-  </ul>
+  <!-- PUBLICATIONS -->
+  <section id="publications" class="reveal">
+    <div class="s-head"><span class="s-num">03</span><h2 class="s-title">Publications</h2></div>
 
-  <footer>
-    Vishnu Pulipaka &middot; Last updated 2026
-  </footer>
+    <div class="pub">
+      <div class="pub-title">How Fast Can Reward Models Score? A Systems Study of C++ and PyTorch Inference Runtimes for RLHF</div>
+      <div class="pub-meta">Vishnu Pulipaka, Anish Katta, Deva Rohit Reddy Peddireddy. arXiv:2607.19712, 2026.</div>
+      <p class="pub-body">Built a native C++ inference engine on ONNX Runtime for RLHF reward-model scoring and benchmarked it against PyTorch eager mode, torch.compile, and FastAPI. On CPU the C++ engine wins outright; on GPU, torch.compile wins. The CPU speedup turned out to come from ONNX Runtime's graph execution, not from C++ itself, and batching strategy mattered more than either.</p>
+      <div class="pub-links">
+        <a href="https://arxiv.org/abs/2607.19712" target="_blank">arXiv</a>
+        <a href="https://github.com/vishnup22/reward-model-benchmarks" target="_blank">Code</a>
+      </div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Evaluating Dedicated Monolingual and Joint Multilingual Causal Models for Dravidian Languages</div>
+      <div class="pub-meta">Vishnu Pulipaka. arXiv:2608.07727, 2026.</div>
+      <p class="pub-body">Trained 5 GPT-2-style causal language models from scratch for Telugu, Tamil, Kannada, and Malayalam — 4 monolingual models, each with its own dedicated 32K-vocabulary tokenizer, plus 1 multilingual model sharing a 64K joint tokenizer — and compared them against XLM-R, mBERT, and mGPT. The dedicated tokenizers beat every multilingual baseline on fertility and compression, and monolingual pretraining is more efficient by bits-per-byte on every language, even where the multilingual model's raw perplexity looked lower. The multilingual run also diverged partway through training, so that comparison ran on an unequal budget — a real asymmetry in the results, not a footnote.</p>
+      <div class="pub-links"><a href="https://arxiv.org/abs/2608.07727" target="_blank">arXiv</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">[Title withheld — under double-blind review]</div>
+      <div class="pub-meta">Vishnu Pulipaka. Submitted, under double-blind review.</div>
+      <p class="pub-body">A release-level fairness drift audit framework applied to 12 model versions from 5 providers across 6 model families and 7 bias benchmarks (about 200K examples). Toxicity declines slightly on average but the confidence interval spans zero; stereotype scores hold steady or worsen in 67% of version transitions, with one statistically significant regression in Gemini-2.5-Pro. All findings replicate after excluding the two most criticized benchmarks.</p>
+      <div class="pub-links"><a href="https://github.com/vishnup22/fairness-drift-llms" target="_blank">Code</a></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">[Title withheld — under review]</div>
+      <div class="pub-meta">Vishnu Pulipaka. Submitted, under review.</div>
+      <p class="pub-body">Translates the 100M-word English BabyLM corpus into Hindi and Telugu with IndicTrans2, then trains and evaluates monolingual and bilingual GPT-Wee and GPT-BERT models. GPT-BERT consistently outperforms GPT-Wee, but models trained on translated data generalize worse than those trained on native CC-100 data when tested out of domain, which matters more than the in-domain perplexity numbers suggest.</p>
+      <div class="pub-links">
+        <a href="https://huggingface.co/datasets/pulipakav-1/translated-babylm-hindi" target="_blank">Hindi Dataset</a>
+        <a href="https://huggingface.co/datasets/pulipakav-1/translated-babylm-telugu" target="_blank">Telugu Dataset</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONGOING -->
+  <section id="ongoing" class="reveal">
+    <div class="s-head"><span class="s-num">04</span><h2 class="s-title">Ongoing</h2></div>
+    <ul class="plain-list">
+      <li><strong>Tokenizer efficiency across Telugu, Hindi, and English</strong> — measuring token inflation and accuracy-efficiency trade-offs for morphologically rich, low-resource languages.</li>
+      <li><strong>MultiModalFedCD</strong> — a federated learning framework combining capsule endoscopy imaging and gene expression data for privacy-preserving Crohn's disease diagnosis. Manuscript in preparation.</li>
+    </ul>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="reveal">
+    <div class="s-head"><span class="s-num">05</span><h2 class="s-title">Education</h2></div>
+
+    <div class="edu-item">
+      <div class="edu-deg">Master of Science in Data Science, Montclair State University</div>
+      <div class="edu-when">Montclair, New Jersey · Sep 2024 – Dec 2025 · GPA 3.87/4.0</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-deg">Bachelor of Technology in Electronics and Communication Engineering, Sreenidhi Institute of Science &amp; Technology</div>
+      <div class="edu-when">Hyderabad, India · Nov 2020 – May 2024</div>
+    </div>
+  </section>
 
 </div>
+
+<footer>Vishnu Pulipaka · Last updated 2026</footer>
+
+<script>
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 8));
+
+  const toggle = document.getElementById('nav-toggle');
+  const links = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
